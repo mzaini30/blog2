@@ -1,0 +1,3 @@
+gems: [jekyll-paginate]
+
+paginate: 10

@@ -39,7 +39,6 @@ isifile = """---
 layout: post
 title: "{judul}"
 date: {tahun}-{bulan}-{tanggal} {jam}:{menit}:{detik}
-gambar: "{gambar}"
 ---
 
 """
@@ -58,8 +57,7 @@ isifile = isifile.format(
 	jam = jam,
 	menit = menit,
 	detik = detik,
-	judulstrip = judulstrip,
-	gambar = gambar
+	judulstrip = judulstrip
 )
 
 buatfile = open("_posts/"+namafile, "w")
