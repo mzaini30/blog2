@@ -3,3 +3,7 @@ a:hover {
     color: inherit;
     text-decoration: underline;
 }
+
+a.disable {
+    text-decoration: none;
+}
