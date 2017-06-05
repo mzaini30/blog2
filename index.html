@@ -2,49 +2,71 @@
 layout: default
 ---
 
-<a href="#" class="disable">
+{% for post in paginator.posts %}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="main-content" itemprop="articleBody">
+
+<a name="blog{{ forloop.index }}"></a>
+
+  <header class="post-header">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><h3 class="post-title" itemprop="name headline">{{ post.title }}</h3> </a>
+
+  </header>
+
+    {{ post.content }}
+
+<p class="post-meta" style="text-align: right; color: rgb(152,152,152);"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ post.author }}</span></span>{% endif %} • <label for="our-popup-{{ forloop.index }}"><i class="fa fa-share"></i> Share / Permalink</label></p>
+
+    <span>
+        <input type="checkbox" id="our-popup-{{ forloop.index }}" class="smoosh" />
+
+        <!-- invisible; when checked, the popup opens -->
+        <label for="our-popup-{{ forloop.index }}" class="overlay"></label>
+
+        <!-- the popup starts here -->
+        <div class="overlay-dialogue">
+            <h3>Share "{{ post.title  }}"</h3>
+
+            <!-- Target -->
+<input id="foo{{ forloop.index }}" value="{{ site.url }}{{ site.baseurl }}{{ post.url }}" type="url">
+
+<!-- Trigger -->
+<button class="share-btn" data-clipboard-target="#foo{{ forloop.index }}">COPY LINK
+</button>
+            <p style="text-align: center;">Share on: <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ post.url }}" target="_blank">Facebook</a> • <a href="https://twitter.com/share?url={{ site.url }}{{ site.baseurl }}{{ post.url }}&amp;text={{ post.title }}" target="_blank">Twitter</a>
+
+            <p style="text-align: center;"><label for="our-popup-{{ forloop.index }}">cancel</label></p>
+        </div>
+    </span>
+
+  </div>
+
+</article>
+
+{% endfor %}
+
+==============================================================================
+
+{% for post in paginator.posts %}
+<a href="/blog2{{ post.url }}" class="disable">
     <div class="panel panel-default">
         <div class="panel-body">
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h1>{{ post.title }}</h1>
+            {{ post.content }}
         </div>
     </div>
 </a>
-<a href="#" class="disable">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
-</a>
-<a href="#" class="disable">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
-</a>
-<a href="#" class="disable">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
-</a>
-<a href="#" class="disable">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
-</a>
+{% endfor %}
+
 <nav aria-label="">
     <ul class="pager">
-        <li class="previous"><a href="#" class="disable"><span aria-hidden="true">&larr;</span> Older</a></li>
-        <li class="next"><a href="#" class="disable">Newer <span aria-hidden="true">&rarr;</span></a></li>
+        {% if paginator.previous_page %}
+        <li class="previous"><a href="/blog2{{ paginator.previous_page_path }}" class="disable"><span aria-hidden="true">&larr;</span> Older</a></li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next"><a href="/blog2{{ paginator.next_page_path }}" class="disable">Newer <span aria-hidden="true">&rarr;</span></a></li>
+        {% endif %}
     </ul>
 </nav>
