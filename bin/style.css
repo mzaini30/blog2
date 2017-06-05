@@ -1,5 +1,6 @@
 a,
-a:hover {
+a:hover,
+a:visited {
     color: inherit;
     text-decoration: underline;
 }
