@@ -7,7 +7,7 @@ layout: default
     <div class="panel panel-default">
         <div class="panel-body">
             <h1>{{ post.title }}</h1>
-            {{ post.content }}
+            <p>{{ post.content | strip_html | truncatewords: 140 }}</p>
         </div>
     </div>
 </a>
