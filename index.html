@@ -16,10 +16,10 @@ layout: default
 <nav aria-label="">
     <ul class="pager">
         {% if paginator.previous_page %}
-        <li class="previous"><a href="/blog2{{ paginator.previous_page_path }}" class="disable"><span aria-hidden="true">&larr;</span> Older</a></li>
+        <li class="previous"><a href="/blog2{{ paginator.previous_page_path }}" class="disable"><span aria-hidden="true">&larr;</span> Newer</a></li>
         {% endif %}
         {% if paginator.next_page %}
-        <li class="next"><a href="/blog2{{ paginator.next_page_path }}" class="disable">Newer <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="/blog2{{ paginator.next_page_path }}" class="disable">Older <span aria-hidden="true">&rarr;</span></a></li>
         {% endif %}
     </ul>
 </nav>
