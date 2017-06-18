@@ -7,7 +7,7 @@
 5. Demo: <http://muhammadzaini.com/zen>
 6. License: <http://github.com/mzaini30/zen/blob/master/LICENSE>
 
-Zen adalah tema Jekyll simpel yang berfokus pada konten. Menggunakan Bootstrap CSS.
+Zen is simpel and elegant Jekyll theme focus on contents. Built with Bootstrap CSS.
 
 # Feature
 
