@@ -2,7 +2,7 @@
 
 1. Author: Zen
 2. License: MIT License
-3. Homepage: <http://muhammadzaini.com/zen>
+3. Homepage: <http://github.com/mzaini30/zen>
 4. Download: <http://github.com/mzaini30/zen/archive/master.zip>
 5. Demo: <http://muhammadzaini.com/zen>
 6. License: <http://github.com/mzaini30/zen/blob/master/LICENSE>
