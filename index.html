@@ -3,23 +3,25 @@ layout: default
 ---
 
 {% for post in paginator.posts %}
-<a href="/blog2{{ post.url }}" class="disable">
+<a href="{{ post.url }}" class="disable">
     <div class="panel panel-default">
         <div class="panel-body">
             <h1>{{ post.title }}</h1>
-            <p>{{ post.content | strip_html | truncatewords: 140 }}</p>
+            <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
         </div>
     </div>
 </a>
 {% endfor %}
 
+{% if paginator.previous_page or paginator.next_page %}
 <nav aria-label="">
     <ul class="pager">
         {% if paginator.previous_page %}
-        <li class="previous"><a href="/blog2{{ paginator.previous_page_path }}" class="disable"><span aria-hidden="true">&larr;</span> Newer</a></li>
+        <li class="previous"><a href="{{ paginator.previous_page_path }}" class="disable"><span aria-hidden="true">&larr;</span> Newer</a></li>
         {% endif %}
         {% if paginator.next_page %}
-        <li class="next"><a href="/blog2{{ paginator.next_page_path }}" class="disable">Older <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="{{ paginator.next_page_path }}" class="disable">Older <span aria-hidden="true">&rarr;</span></a></li>
         {% endif %}
     </ul>
 </nav>
+{% endif %}

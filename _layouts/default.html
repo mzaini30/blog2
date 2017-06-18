@@ -2,26 +2,36 @@
 <html>
 
 <head>
-    <title>Zen</title>
+    <title>{% if page.date %}{{ page.title }} - {% endif %}{{ site.title }} - {{ site.description }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/blog2/bin/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/blog2/bin/style.css">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
+    <link rel="stylesheet" type="text/css" href="/bin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bin/highlight github.css">
+    <link rel="stylesheet" type="text/css" href="/bin/style.css">
+    {% include medsos.html %}
 </head>
 
 <body>
     <div class="container">
         <div class="page-header text-center">
-            <h1><a href="/blog2">Zen</a></h1>
+            <h1><a href="/">{{ site.title }}</a></h1>
+            <p>"{{ site.description }}"</p>
         </div>
         <ol class="breadcrumb">
-            <li><a href="/blog2/2017/06/05/web-apps.html">Apps</a></li>
+            <li><a href="/2017/06/05/web-apps.html">Apps</a></li>
+            <li><a href="http://gitlab.com/ebook-psikologi">Ebook</a></li>
+            <li><a href="/2017/06/06/format-flashdisk-di-linux.html">Format Flashdisk</a></li>
+            <li><a href="http://gitlab.com/users/mzaini30/projects">Gitlab</a></li>
+            <li><a href="/2017/06/09/markdown-editing-docs.html">Markdown Editing Docs</a></li>
+            <li><a href="http://gitlab.com/mzaini30/metpen-kualitatif">Metpen</a></li>
+            <li><a href="/2017/06/06/situs-penting.html">Situs Penting</a></li>
         </ol>
         {{ content }}
         <hr>
         <center>
             <a href="http://line.me/ti/p/~mzaini30">
-                <img src="/blog2/bin/line.png" width="50">
+                <img src="/bin/line.png" width="50">
             </a>
         </center>
         <br>

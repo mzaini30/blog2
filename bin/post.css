@@ -1,0 +1,21 @@
+.panel p,
+.panel li {
+    font-size: 15px;
+}
+
+.panel p {
+    margin: 0 0 20px;
+}
+
+.panel h1,
+.panel h2,
+.panel h3,
+.panel h4,
+.panel h5,
+.panel h6 {
+    margin: 30px 0 20px;
+}
+
+hr {
+    margin-top: 0;
+}

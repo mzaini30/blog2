@@ -2,9 +2,84 @@
 layout: default
 ---
 
+<meta content="100000415959373" property="fb:admins">
+<meta content="138657143371048" property="fb:app_id">
+<link rel="stylesheet" type="text/css" href="/bin/post.css">
 <div class="panel panel-default">
     <div class="panel-body">
     <h1>{{ page.title }}</h1>
     {{ content }}
     </div>
 </div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="list-group">
+                <div class="list-group-item"><strong>Tulisan Terfavorit</strong></div>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="list-group">
+                <div class="list-group-item"><strong>Tulisan Terpopuler</strong></div>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="list-group">
+                <div class="list-group-item"><strong>Tulisan Terbaik</strong></div>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+                <a href="#" class="list-group-item">Hello World</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+function edit() {
+    prompt("Skrip untuk mengedit:", "cd \"/home/blog (git)/_posts\"; subl {{ page.file }}")
+}
+</script>
+
+<!-- summon jquery -->
+<script type="text/javascript" src="/bin/jquery.min.js"></script>
+
+<!-- responsive table -->
+<script type="text/javascript">
+    $("table").addClass("table")
+        .wrapAll("<div class='table-responsive'>")
+</script>
+
+<!-- related posts -->
+<script type="text/javascript" src="/bin/posts.js"></script>
+<script type="text/javascript" src="/bin/related.js"></script>
+<hr>
+
+<!-- komentar facebook -->
+<div id='fb-root'></div>
+<script src='http://connect.facebook.net/en_US/all.js#xfbml=1'></script>
+<div id='container-commentfb' style='width: 100%;'></div>
+<script type="text/javascript">
+$(function() {
+    var url = "{{ site.url }}{{ page.url }}"
+    var containercm_width = $('#container-commentfb').width();
+    $('#container-commentfb').html('<div class="fb-comments" ' +
+        'data-href="' + url + '"' +
+        ' width="' + containercm_width + '" data-num-posts="10"></div>');
+    FB.XFBML.parse();
+})
+</script>
