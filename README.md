@@ -11,4 +11,4 @@ Zen adalah tema Jekyll simpel yang berfokus pada konten. Menggunakan Bootstrap C
 
 # Feature
 
-1. Membuat tulisan baru dengan cepat
+1. Membuat tulisan baru dengan cepat menggunakan `new.py`
