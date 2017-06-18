@@ -1,5 +1,5 @@
 title: Zen
-description: Mahasiswa Psikologi
+description: Psychology Student
 
 url: "http://muhammadzaini.com"
 gambar: "http://img12.deviantart.net/1b57/i/2013/266/5/5/look_for_the_bare_necessities_of_life_by_ineedchemicalx-d6nhvy1.jpg"
@@ -8,3 +8,5 @@ twitter_username: mzaini30
 gems: [jekyll-paginate]
 
 paginate: 10
+
+# gambar is Indonesian of "image"
