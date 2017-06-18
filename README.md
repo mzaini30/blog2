@@ -11,10 +11,11 @@ Zen adalah tema Jekyll simpel yang berfokus pada konten. Menggunakan Bootstrap C
 
 # Feature
 
-1. Create new post blog rapidly with `new.py` (dependencies: Python 2 and Sublime Text)
+1. Create new blog post rapidly with `new.py` (dependencies: Python 2 and Sublime Text)
 2. Facebook comment embedded
 3. LINE logo bottom of blog]
 4. Paginate
+5. Facebook Open Graph and Twitter Card Automatically if you create new blog post with `new.py`
 
 # Contact
 
