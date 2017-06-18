@@ -1,6 +1,6 @@
 import datetime, re, os, random
 
-judul = raw_input("Judul tulisan: ")
+judul = raw_input("Post Title: ")
 
 
 judulstrip = judul[:]
