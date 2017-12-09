@@ -1,11 +1,9 @@
 import time, os
 
-git = """git status
-git add -A .
-git commit -m "oke"
-git push"""
-
 while True:
-	os.system(git)
+	os.system("git status")
+	os.system("git add -A .")
+	os.system("git commit -m 'oke'")
+	os.system("git push")
 	print
 	time.sleep(180)
